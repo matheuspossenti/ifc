@@ -1,4 +1,4 @@
-package tvdemerda;
+package tv;
 
 import java.util.Iterator;
 
@@ -30,7 +30,7 @@ public class Televisao {
 		if((canal < canais.length) && (canais[canal] == true)) {
 			canalAtual = canal;
 		} else {
-			System.out.println("O canal" + canal + "não está ativo ou não existe.");
+			System.out.println("O canal" + canal + "nÃ£o estÃ¡ ativo ou nÃ£o existe.");
 		}
 		
 		exibirCanal();
