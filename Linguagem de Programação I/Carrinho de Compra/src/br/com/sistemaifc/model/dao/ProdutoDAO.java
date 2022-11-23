@@ -2,8 +2,11 @@ package br.com.sistemaifc.model.dao;
 
 import br.com.sistemaifc.model.vo.Produto;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class ProdutoDAO {
     
@@ -61,4 +64,111 @@ public class ProdutoDAO {
     }
     
     //consultar produto
+    public ArrayList<Produto> consultarProduto(){
+        Statement stmt = null;
+        ResultSet rs = null;
+        ArrayList<Produto> produtos = new ArrayList<>();
+        
+        try {
+        stmt = con.createStatement();
+        rs = stmt.executeQuery("select * from produto");
+
+        while (rs.next()) {
+            Produto produto = new Produto();
+            produto.setIdProduto(rs.getInt("idproduto"));
+            produto.setNome(rs.getString("nome"));
+            produto.setValor(rs.getDouble("valor"));
+            produto.setValor(rs.getDouble("frete"));
+            
+            produtos.add(produto);
+        }
+
+        stmt.close();
+        rs.close();
+        } catch (SQLException e) {
+               e.printStackTrace();
+        }
+        return produtos;
+    }
+    
+    public ArrayList<Produto> consultarProdutoPorNome(String nome){
+        Statement stmt = null;
+        ResultSet rs = null;
+        ArrayList<Produto> produtos = new ArrayList<>();
+        
+        try {
+        stmt = con.createStatement();
+        rs = stmt.executeQuery("select * from produto where nome like '%"+nome+"%'");
+
+        while (rs.next()) {
+            Produto produto = new Produto();
+            produto.setIdProduto(rs.getInt("idproduto"));
+            produto.setNome(rs.getString("nome"));
+            produto.setValor(rs.getDouble("valor"));
+            produto.setValor(rs.getDouble("frete"));
+            
+            produtos.add(produto);
+        }
+
+        stmt.close();
+        rs.close();
+        } catch (SQLException e) {
+               e.printStackTrace();
+        }
+        return produtos;
+    }
+    
+    public ArrayList<Produto> consultarProdutoLimit(int qtd){
+        Statement stmt = null;
+        ResultSet rs = null;
+        ArrayList<Produto> produtos = new ArrayList<>();
+        
+        try {
+        stmt = con.createStatement();
+        rs = stmt.executeQuery("select * from produto limit 0," + qtd);
+
+        while (rs.next()) {
+            Produto produto = new Produto();
+            produto.setIdProduto(rs.getInt("idproduto"));
+            produto.setNome(rs.getString("nome"));
+            produto.setValor(rs.getDouble("valor"));
+            produto.setValor(rs.getDouble("frete"));
+            
+            produtos.add(produto);
+        }
+
+        stmt.close();
+        rs.close();
+        } catch (SQLException e) {
+               e.printStackTrace();
+        }
+        return produtos;
+    }
+    
+    public ArrayList<Produto> consultarProdutoAleatorios(int qtd){
+        Statement stmt = null;
+        ResultSet rs = null;
+        ArrayList<Produto> produtos = new ArrayList<>();
+        
+        try {
+        stmt = con.createStatement();
+        rs = stmt.executeQuery("select * from produto order by rand() limit 0," + qtd);
+
+        while (rs.next()) {
+            Produto produto = new Produto();
+            produto.setIdProduto(rs.getInt("idproduto"));
+            produto.setNome(rs.getString("nome"));
+            produto.setValor(rs.getDouble("valor"));
+            produto.setValor(rs.getDouble("frete"));
+            
+            produtos.add(produto);
+        }
+
+        stmt.close();
+        rs.close();
+        } catch (SQLException e) {
+               e.printStackTrace();
+        }
+        return produtos;
+    }
 }

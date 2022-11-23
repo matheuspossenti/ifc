@@ -5,6 +5,7 @@
 package br.com.sistemaifc.view;
 
 import br.com.sistemaifc.model.bo.Carrinho;
+import br.com.sistemaifc.model.dao.ProdutoDAO;
 import br.com.sistemaifc.model.vo.Item;
 import br.com.sistemaifc.model.vo.Produto;
 import java.util.ArrayList;
@@ -24,33 +25,17 @@ public class LojaE extends javax.swing.JFrame {
     public LojaE() {
         initComponents();
         this.produtoSelecionado = null;
-        this.carregarProdutos();
+        
+        ProdutoDAO produtoDAO = new ProdutoDAO();
+        
+        this.produtos = produtoDAO.consultarProduto();
+        
         DefaultComboBoxModel modeloCombo = new DefaultComboBoxModel();
         modeloCombo.addAll(produtos);
         this.carrinho = new Carrinho();
         
         
         jComboBoxProdutos.setModel(modeloCombo);
-        
-    }
-    
-    
-    //o correto seria uma consulta a um banco
-    public void carregarProdutos(){
-        Produto p1 = new Produto(0, "Tv CCE 14", 3000, 100);
-        Produto p2 = new Produto(1, "Celular Xingling ABC", 1500, 50);
-        Produto p3 = new Produto(2, "Tudo Sobre Java", 150, 0);
-        Produto p4 = new Produto(2, "Aprendendo BD em 24h", 100, 1);
-        Produto p5 = new Produto(2, "Cadeira Gamer", 1500, 80);
-        Produto p6 = new Produto(5, "Faca para churrasqueira", 200, 20);
-        
-        produtos = new ArrayList<>();
-        produtos.add(p1);
-        produtos.add(p2);
-        produtos.add(p3);
-        produtos.add(p4);
-        produtos.add(p5);
-        produtos.add(p6);
         
     }
 

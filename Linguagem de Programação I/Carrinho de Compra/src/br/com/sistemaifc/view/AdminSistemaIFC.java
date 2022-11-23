@@ -211,8 +211,15 @@ public class AdminSistemaIFC extends javax.swing.JFrame {
         
         pDAO.cadastrarProduto(produto);
         JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso");
+        
+        limparCampos();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
+    public void limparCampos(){
+        this.txtNome.setText("");
+        this.txtValor.setText("");
+        this.txtFrete.setText("");
+    }
     /**
      * @param args the command line arguments
      */

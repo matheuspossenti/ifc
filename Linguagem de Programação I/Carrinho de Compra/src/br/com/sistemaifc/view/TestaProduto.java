@@ -3,15 +3,16 @@ package br.com.sistemaifc.view;
 
 import br.com.sistemaifc.model.dao.ProdutoDAO;
 import br.com.sistemaifc.model.vo.Produto;
+import java.util.ArrayList;
 
 public class TestaProduto {
     public static void main(String[] args) {
         ProdutoDAO produtoDAO = new ProdutoDAO();
         
-        Produto produto = new Produto();
-        produto.setIdProduto(3);
+        ArrayList<Produto> produtos = produtoDAO.consultarProduto();
         
-        produtoDAO.removerProduto(produto);
+        
+        
     }
     
     
