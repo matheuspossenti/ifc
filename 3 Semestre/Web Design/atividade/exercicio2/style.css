@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+section{
+    display: block;
+    width: 500px;
+    padding: 10px;
+    background-color: gainsboro;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: solid 2px;
+    border-color: black;
+}
+
+form {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form label {
+    font-size: 20px;
+}
+
+form input {
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 9px;
+}
+
+form textarea {
+    padding: 9px;
+    border-radius: 10px;
+}
+
+form input.btn{
+    background-color: deeppink;
+    border-width: 2px;
+}

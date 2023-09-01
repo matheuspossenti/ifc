@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+h1, p, ul{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    margin: 20px;
+}
+
+li{
+    margin: 20px;
+}
+
+li a{
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover{
+    font-size: 17px;
+}
+
+img{
+    width: 75px;
+    display: block;
+    margin: 10px auto;
+}

@@ -1,0 +1,45 @@
+header {
+    padding: 100px;
+    text-align: center;
+}
+
+p, h1{
+    color: rgba(0,0,0,0.69);    
+    font-family: 'Archivo', sans-serif;
+}
+
+header h1{
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    font-size: 1.1em;
+    opacity: 1;
+}
+
+header p{
+    font-size: 20px;
+}
+
+main{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.img{
+    display: inline;
+}
+
+.img img{
+    width: 100px;
+    display: inline-block;
+}
+
+div.aside img{
+    width: 50px;
+}
+
+.aside p{
+    font-size: 1em;
+    letter-spacing: 0.025rem;
+    font-weight: 600;
+}
